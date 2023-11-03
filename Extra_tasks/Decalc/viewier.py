@@ -1,7 +1,7 @@
 import decalc
 
 
-def create_list(*args, **kwargs):
+def create_list(*args, **kwargs) -> list[str]:
     lst = []
     for value in args:
         lst += [f'Point_{args.index(value)} = {decalc.deg_to_gms(value)}']

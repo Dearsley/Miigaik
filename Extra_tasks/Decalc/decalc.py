@@ -1,7 +1,8 @@
 from math import pi
 from typing import Union
 
-def deg_to_gms(deg: float, formats: str ='string') -> Union[int, float]:
+
+def deg_to_gms(deg: float, formats: str = 'string') -> Union[tuple[int, int, float], str, None]:
     degrees = int(deg)
     minutes = int((deg - degrees) * 60)
     seconds = ((((deg - degrees) * 60) - minutes) * 60)
