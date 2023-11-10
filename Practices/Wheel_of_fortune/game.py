@@ -3,6 +3,7 @@ from file_utils import *
 
 
 def game():
+    global default_health
     word_list = get_words()
     record = 0
     hidden_word = []
@@ -48,7 +49,7 @@ def game():
             print("Вы угадали слово!")
             print(f"Счёт: {record}")
 
-            if not(word_list):
+            if not word_list:
                 break
 
             elif input("Вы хотите продолжить (да/нет)? ") == "да":
@@ -77,7 +78,7 @@ def game():
             health -= 1
             print("Неправильно. Вы теряете жизнь")
 
-        if not(word_list) and not playing:
+        if not word_list and not playing:
             break
 
     if record == get_records(record):
