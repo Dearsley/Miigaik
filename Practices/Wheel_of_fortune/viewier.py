@@ -1,6 +1,4 @@
-from wheel_of_fortune.game import *
-
-from wheel_of_fortune.game import *
+from game import *
 
 
 def show():
