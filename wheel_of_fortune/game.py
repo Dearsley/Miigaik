@@ -82,7 +82,7 @@ def game():
 
     if record == get_records(record):
         print("\n\nПоздравляем! Вы установили новый рекорд!")
-    print(f"\n\nВы угадали {record} слов подряд.\nРекорд: {get_records(record)}" if record != 1 else f"\n\nВы угадали одно слово.\nРекорд: {get_records(record)}")
+    print(f"\n\nВы угадали одно слово.\nРекорд: {get_records(record)}" if record == 1 else(f"\n\nВы угадали {record} слов подряд.\nРекорд: {get_records(record)}" if record % 10 > 4 or record % 10 == 0 else(f"\n\nВы угадали {record} слова подряд.\nРекорд: {get_records(record)}")))
 
 
 if __name__ == "__main__":
