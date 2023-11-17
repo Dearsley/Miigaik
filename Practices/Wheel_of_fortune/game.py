@@ -43,7 +43,15 @@ def game():
             print(f"{word_hide_str} | \u2665x{health}")
             letter = input("Назовите букву или слово целиком: ")
 
-        if letter.upper() == word or "".join(hidden_word) == word:
+        if len(letter) != 1 and len(letter) != len(word):
+            print("Неккоректный ввод\n")
+
+        elif letter.upper() != word and len(letter) == len(word):
+            print(f"\nВы проиграли.")
+            print(f"Счёт: {record}")
+            break
+
+        elif letter.upper() == word or "".join(hidden_word) == word:
             record += 1
             print("".join(word))
             print("Вы угадали слово!")
@@ -71,6 +79,7 @@ def game():
                     hidden_word[i] = letter.upper()
 
         elif health == 0:
+            print(f"Вы проиграли.")
             print(f"Счёт: {record}")
             break
 
@@ -82,8 +91,8 @@ def game():
             break
 
     if record == get_records(record):
-        print("\n\nПоздравляем! Вы установили новый рекорд!")
-    print(f"\n\nВы угадали одно слово.\nРекорд: {get_records(record)}" if record == 1 else(f"\n\nВы угадали {record} слов подряд.\nРекорд: {get_records(record)}" if record % 10 > 4 or record % 10 == 0 else(f"\n\nВы угадали {record} слова подряд.\nРекорд: {get_records(record)}")))
+        print("\nПоздравляем! Вы установили новый рекорд!")
+    print(f"\nВы угадали одно слово.\nРекорд: {get_records(record)}" if record == 1 else(f"\n\nВы угадали {record} слов подряд.\nРекорд: {get_records(record)}" if record % 10 > 4 or record % 10 == 0 else(f"\n\nВы угадали {record} слова подряд.\nРекорд: {get_records(record)}")))
 
 
 if __name__ == "__main__":
