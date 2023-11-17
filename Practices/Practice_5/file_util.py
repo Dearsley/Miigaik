@@ -15,5 +15,5 @@ def get_numbers(path: str):
         return "Файл не найден."
     except ValueError:
         return "В файле не правильно указанны данные или присутствуют символы, не являющиеся числами."
-
-
+    except OSError:
+        return "Ошибка в системе"

@@ -2,7 +2,7 @@ from file_util import *
 
 
 def show():
-    print("Введите \"выход\" чтобы завершить программу.")
+    print('Введите "выход" чтобы завершить программу.')
     while True:
         file = input("Введите имя файла: ")
 
@@ -10,6 +10,7 @@ def show():
             break
 
         print(get_numbers(file))
+
 
 if __name__ == "__main__":
     show()
